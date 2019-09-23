@@ -51,3 +51,28 @@ var app = {
 function vibrar(){
     navigator.vibrate(3000);
 }
+
+function funcAmilcar(){
+    return "Hello World";
+}
+
+function consoleLogger(outerFunction){
+    var text = outerFunction();
+    console.log(text);
+}
+
+//consoleLogger(funcAmilcar);
+
+
+function cameraCallback(imageData){
+    var image = document.getElementById('myImage'); 
+    image.src = imageData; 
+}
+
+function onError(errorMessage){
+    console.log(errorMessage)
+}
+
+function takePicture(){
+    navigator.camera.getPicture(cameraCallback, onError);
+}
